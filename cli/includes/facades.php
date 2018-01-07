@@ -29,3 +29,6 @@ class Facade
         return call_user_func_array([$resolvedInstance, $method], $parameters);
     }
 }
+
+class Parser extends Facade {}
+class Serial extends Facade {}
