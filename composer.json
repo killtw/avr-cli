@@ -13,7 +13,10 @@
         "files": [
             "cli/includes/facades.php",
             "cli/includes/helpers.php"
-        ]
+        ],
+        "psr-4": {
+            "Avr\\": "cli/Avr/"
+        }
     },
     "require": {
         "illuminate/container": "^5.5",
