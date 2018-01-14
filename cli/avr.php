@@ -13,22 +13,10 @@ $version = '0.0.1';
 
 $app = new Application('Adult Video Renamer CLI', $version);
 
-$app->command('get path', function ($path) {
-    $filename = basename($path);
-
-    if ($serial = Serial::get($filename)) {
-        $result = Parser::search($serial);
-
-        output($result);
-    } else {
-        warning('Could get void serial.');
-    }
-});
+$app->addCommands([
+    new \Avr\Commands\GetCommand,
+]);
 
 
 // Run application.
-try {
-    $app->run();
-} catch (Exception $e) {
-    output($e->getMessage());
-}
+$app->run();
