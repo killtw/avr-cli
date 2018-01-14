@@ -1,6 +1,7 @@
 <?php
 
 namespace Avr;
+use Exception;
 
 /**
  * Class Serial
@@ -20,6 +21,7 @@ class Serial
      * @param string $path
      *
      * @return bool|string
+     * @throws Exception
      */
     public function get($path)
     {
@@ -27,7 +29,7 @@ class Serial
             return strtoupper($serial);
         }
 
-        return false;
+        throw new Exception('Could not get void serial.');
     }
 
     /**
