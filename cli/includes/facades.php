@@ -30,5 +30,7 @@ class Facade
     }
 }
 
+class Avr extends Facade {}
 class Parser extends Facade {}
 class Serial extends Facade {}
+class Filesystem extends Facade {}
