@@ -67,22 +67,19 @@ class Parser
         $item = $this->client->request('GET', $search)->filter('dl a')->first()->link()->getUri();
         $crawler = $this->client->request('GET', $item);
 
-        $result = [
+        return [
             'serial' => trim($crawler->filter('table.item tr td:nth-child(2)')->eq(7)->text()),
             'title' => $crawler->filter('h1')->first()->text(),
             'cover' => $crawler->filter('img.item_img')->first()->image()->getUri(),
             'actress' => implode(', ', $crawler->filter('table.item tr td:nth-child(2)')->first()->filter('a')->each(function (Crawler $actress) {
                 return trim($actress->text());
             })),
-            'creator' => trim($crawler->filter('table.item tr td:nth-child(2)')->eq(1)->text()),
             'publisher' => trim($crawler->filter('table.item tr td:nth-child(2)')->eq(2)->text()),
             'director' => trim($crawler->filter('table.item tr td:nth-child(2)')->eq(4)->text()),
             'published_at' => explode(' ', trim($crawler->filter('table.item tr td:nth-child(2)')->eq(5)->text()))[0],
             'series' => trim($crawler->filter('table.item tr td:nth-child(2)')->eq(3)->text()),
             'rate' => null,
         ];
-
-        return $result;
     }
 
     /**
@@ -100,7 +97,6 @@ class Parser
             'actress' => implode(', ', $crawler->filter('span.star a')->each(function (Crawler $actress) {
                 return trim($actress->text());
             })),
-            'creator' => trim($crawler->filter('span.maker')->first()->text()),
             'publisher' => trim($crawler->filter('span.label')->first()->text()),
             'director' => trim($crawler->filter('span.director')->first()->text()),
             'published_at' => trim($crawler->filter('div#video_date td')->eq(1)->text()),
