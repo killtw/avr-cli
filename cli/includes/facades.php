@@ -11,7 +11,7 @@ class Facade
      */
     public static function containerKey()
     {
-        return 'Avr\\' . basename(str_replace('\\', '/', get_called_class()));
+        return 'Avr\\'.basename(str_replace('\\', '/', get_called_class()));
     }
 
     /**
@@ -30,7 +30,15 @@ class Facade
     }
 }
 
-class Avr extends Facade {}
-class Parser extends Facade {}
-class Serial extends Facade {}
-class Filesystem extends Facade {}
+class Avr extends Facade
+{
+}
+class Parser extends Facade
+{
+}
+class Serial extends Facade
+{
+}
+class Filesystem extends Facade
+{
+}

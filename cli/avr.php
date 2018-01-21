@@ -1,11 +1,11 @@
 #!/usr/bin/env php
 <?php
 
-# Require composer autoload
-require __DIR__ . '/../vendor/autoload.php';
+// Require composer autoload
+require __DIR__.'/../vendor/autoload.php';
 
-use Illuminate\Container\Container;
 use Silly\Application;
+use Illuminate\Container\Container;
 
 Container::setInstance(new Container);
 
@@ -16,7 +16,6 @@ $app = new Application('Adult Video Renamer CLI', $version);
 $app->addCommands([
     new \Avr\Commands\GetCommand,
 ]);
-
 
 // Run application.
 $app->run();

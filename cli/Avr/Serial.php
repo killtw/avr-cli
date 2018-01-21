@@ -1,12 +1,11 @@
 <?php
 
 namespace Avr;
+
 use Exception;
 
 /**
- * Class Serial
- *
- * @package Avr
+ * Class Serial.
  */
 class Serial
 {

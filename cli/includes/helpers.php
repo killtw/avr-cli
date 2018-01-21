@@ -6,7 +6,8 @@ use Symfony\Component\Console\Output\ConsoleOutput;
 /**
  * @param string|array $messages
  */
-function output($messages) {
+function output($messages)
+{
     if (is_array($messages)) {
         foreach ($messages as $message) {
             (new ConsoleOutput)->writeln($message);

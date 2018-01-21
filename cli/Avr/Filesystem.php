@@ -3,9 +3,7 @@
 namespace Avr;
 
 /**
- * Class Filesystem
- *
- * @package Avr
+ * Class Filesystem.
  */
 class Filesystem
 {

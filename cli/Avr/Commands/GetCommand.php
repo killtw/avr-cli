@@ -2,7 +2,6 @@
 
 namespace Avr\Commands;
 
-
 use Avr;
 use Exception;
 use Symfony\Component\Console\Input\InputArgument;
@@ -33,13 +32,13 @@ class GetCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         try {
-            $file =$input->getArgument('path');
+            $file = $input->getArgument('path');
             $avr = Avr::search($file);
 
             if ($this->confirmToProceed(true)) {
                 $avr->execute();
 
-                $this->output->success("Success!");
+                $this->output->success('Success!');
             }
         } catch (Exception $e) {
             warning($e->getMessage());
