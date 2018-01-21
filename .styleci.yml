@@ -1,0 +1,9 @@
+preset: laravel
+
+enabled:
+  - unalign_double_arrow
+
+disabled:
+  - single_class_element_per_statement
+
+linting: true
