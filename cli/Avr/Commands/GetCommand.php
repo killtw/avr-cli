@@ -17,8 +17,8 @@ class GetCommand extends Command
     protected function configure()
     {
         $this
-            ->setName('get')
-            ->setDescription('Create a new BotMan application.')
+            ->setName('g')
+            ->setDescription('Rename, move and download cover.')
             ->addArgument('path', InputArgument::OPTIONAL);
     }
 
