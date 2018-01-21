@@ -103,7 +103,7 @@ class Parser
             'series' => implode(', ', $crawler->filter('span.genre a')->each(function (Crawler $actress) {
                 return trim($actress->text());
             })),
-            'rate' => str_replace(['(', ')'], '', trim($crawler->filter('span.score')->first()->text())),
+            'rate' => $crawler->filter('span.score')->count() ? str_replace(['(', ')'], '', trim($crawler->filter('span.score')->first()->text())) : null,
         ];
     }
 }
