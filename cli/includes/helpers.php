@@ -24,6 +24,10 @@ function warning($messages)
     output("<fg=red>$messages</>");
 }
 
+/**
+ * @param array $headers
+ * @param array $rows
+ */
 function table(array $headers = [], array $rows = [])
 {
     $table = new Table(new ConsoleOutput);
