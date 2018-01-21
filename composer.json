@@ -22,7 +22,7 @@
         "illuminate/container": "^5.5",
         "mnapoli/silly": "^1.7",
         "php": ">=7.0",
-        "symfony/process": "^4.0",
+        "symfony/process": "~2.0|~3.0|~4.0",
         "tightenco/collect": "^5.5",
         "fabpot/goutte": "^3.2"
     },
