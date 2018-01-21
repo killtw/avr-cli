@@ -8,9 +8,7 @@ use Symfony\Component\BrowserKit\Cookie;
 use Symfony\Component\DomCrawler\Crawler;
 
 /**
- * Class Parser
- *
- * @package Avr
+ * Class Parser.
  */
 class Parser
 {
@@ -23,14 +21,9 @@ class Parser
      */
     private $serial;
 
-    /**
-     *
-     */
-    const ARZON = "https://www.arzon.jp/itemlist.html?t=&m=all&s=&q=%s";
-    /**
-     *
-     */
-    const JAVLIBRARY = "http://www.javlibrary.com/tw/vl_searchbyid.php?keyword=%s";
+    const ARZON = 'https://www.arzon.jp/itemlist.html?t=&m=all&s=&q=%s';
+
+    const JAVLIBRARY = 'http://www.javlibrary.com/tw/vl_searchbyid.php?keyword=%s';
 
     /**
      * Parser constructor.
@@ -63,7 +56,7 @@ class Parser
      */
     private function arzon()
     {
-        $search = 'https://www.arzon.jp/index.php?action=adult_customer_agecheck&agecheck=1&redirect=' . urlencode(sprintf(self::ARZON, $this->serial));
+        $search = 'https://www.arzon.jp/index.php?action=adult_customer_agecheck&agecheck=1&redirect='.urlencode(sprintf(self::ARZON, $this->serial));
         $item = $this->client->request('GET', $search)->filter('dl a')->first()->link()->getUri();
         $crawler = $this->client->request('GET', $item);
 

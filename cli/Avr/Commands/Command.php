@@ -2,15 +2,13 @@
 
 namespace Avr\Commands;
 
-use Symfony\Component\Console\Command\Command as BaseCommand;
+use Symfony\Component\Console\Style\SymfonyStyle;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Console\Style\SymfonyStyle;
+use Symfony\Component\Console\Command\Command as BaseCommand;
 
 /**
- * Class Command
- *
- * @package Avr\Commands
+ * Class Command.
  */
 class Command extends BaseCommand
 {

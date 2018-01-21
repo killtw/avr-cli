@@ -2,15 +2,13 @@
 
 namespace Avr;
 
-use Exception;
-use Filesystem;
 use Parser;
 use Serial;
+use Exception;
+use Filesystem;
 
 /**
- * Class Avr
- *
- * @package Avr
+ * Class Avr.
  */
 class Avr
 {
@@ -31,8 +29,9 @@ class Avr
      */
     public function search($file)
     {
-        if (!Filesystem::exists($file)) throw new Exception('File is not exists.');
-
+        if (! Filesystem::exists($file)) {
+            throw new Exception('File is not exists.');
+        }
         $this->file = $file;
 
         $this->info = Parser::search(Serial::get(Filesystem::getFileName($this->file)));
