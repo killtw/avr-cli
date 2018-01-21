@@ -13,7 +13,7 @@ class Serial
     /**
      * Regex for getting video serial.
      */
-    const REGEX = "/[A-Za-z]{2,5}\-?\d{2,5}/";
+    const REGEX = "/[A-Za-z0-9]{2,5}\-?\d{2,5}/";
 
     /**
      * Get video serial from path.
