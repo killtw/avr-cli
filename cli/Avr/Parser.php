@@ -98,7 +98,7 @@ class Parser
                 return trim($actress->text());
             })),
             'publisher' => trim($crawler->filter('span.label')->first()->text()),
-            'director' => trim($crawler->filter('span.director')->first()->text()),
+            'director' => $crawler->filter('span.director')->count() ? trim($crawler->filter('span.director')->first()->text()) : null,
             'published_at' => trim($crawler->filter('div#video_date td')->eq(1)->text()),
             'series' => implode(', ', $crawler->filter('span.genre a')->each(function (Crawler $actress) {
                 return trim($actress->text());
