@@ -1,5 +1,10 @@
 # AVR Cli
 
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/killtw/avr-cli.svg?style=flat-square)](https://packagist.org/packages/killtw/avr-cli)
+[![StyleCI](https://styleci.io/repos/118302201/shield?branch=master)](https://styleci.io/repos/118302201)
+[![Total Downloads](https://img.shields.io/packagist/dt/killtw/avr-cli.svg?style=flat-square)](https://packagist.org/packages/killtw/avr-cli)
+
+
 A cli tool for rename video.
 
 ### Installation
