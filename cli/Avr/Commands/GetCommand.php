@@ -5,11 +5,9 @@ namespace Avr\Commands;
 
 use Avr;
 use Exception;
-use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Console\Question\ConfirmationQuestion;
 
 class GetCommand extends Command
 {
@@ -35,18 +33,32 @@ class GetCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         try {
-            $info = Avr::search($input->getArgument('path'));
+            $file =$input->getArgument('path');
+            $avr = Avr::search($file);
 
-//            $helper = $this->getHelperSet()->get('question');
-//
-//            $question = new ConfirmationQuestion("Are you sure?\nY/n");
-//
-//            if ($helper->ask($input, $output, $question)) {
-//                $output->writeln('Hello!');
-//            }
-            output($info->file);
+            if ($this->confirmToProceed(true)) {
+                $avr->execute();
+
+                $this->output->success("Success!");
+            }
         } catch (Exception $e) {
             warning($e->getMessage());
         }
+    }
+
+    /**
+     * @param bool $default
+     *
+     * @return bool
+     */
+    protected function confirmToProceed($default = false)
+    {
+        if (! $this->confirm('Do you really wish to run this command?', $default)) {
+            $this->note('Command aborted!');
+
+            return false;
+        }
+
+        return true;
     }
 }
