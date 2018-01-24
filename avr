@@ -1,3 +1,12 @@
 #!/usr/bin/env bash
 
-php "./cli/avr.php" "$@"
+SOURCE="${BASH_SOURCE[0]}"
+
+if [[ -L $SOURCE ]]
+then
+    DIR=$(php -r "echo dirname(realpath('$SOURCE'));")
+else
+    DIR="$( cd "$( dirname "$SOURCE" )" && pwd )"
+fi
+
+php "$DIR/cli/avr.php" "$@"
