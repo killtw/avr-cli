@@ -2,8 +2,8 @@
 
 namespace Avr\Commands;
 
-use Avr\Facade\Avr;
 use Exception;
+use Avr\Facade\Avr;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
