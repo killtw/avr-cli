@@ -2,10 +2,10 @@
 
 namespace Avr;
 
-use Parser;
-use Serial;
+use Avr\Facade\Parser;
+use Avr\Facade\Serial;
 use Exception;
-use Filesystem;
+use Avr\Facade\Filesystem;
 
 /**
  * Class Avr.

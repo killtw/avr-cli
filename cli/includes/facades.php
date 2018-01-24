@@ -1,5 +1,7 @@
 <?php
 
+namespace Avr\Facade;
+
 use Illuminate\Container\Container;
 
 class Facade
