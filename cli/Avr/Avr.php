@@ -2,9 +2,9 @@
 
 namespace Avr;
 
+use Exception;
 use Avr\Facade\Parser;
 use Avr\Facade\Serial;
-use Exception;
 use Avr\Facade\Filesystem;
 
 /**
