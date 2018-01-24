@@ -13,7 +13,7 @@ use Illuminate\Container\Container;
 
 Container::setInstance(new Container);
 
-$version = '0.0.1';
+$version = '1.0.4';
 
 $app = new Application('Adult Video Renamer CLI', $version);
 
